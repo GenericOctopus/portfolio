@@ -65,6 +65,6 @@ class WebsitesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def website_params
-      params.require(:website).permit(:url, :img, :desc)
+      params.require(:website).permit(:url, :img, :desc, :title)
     end
 end

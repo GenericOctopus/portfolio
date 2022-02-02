@@ -2,3 +2,50 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <button class="btn btn-success">Bootstrap Button</button>
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">NavBar</a>
+    <button class="navbar-toggler" type="button" data-bs-target="#myNav" data-bs-toggle="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="myNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Git Source Pages
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="https://github.com/GenericOctopus/minimal_demo">Petite-Vue Minimalist Demo (Current Page)</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://github.com/GenericOctopus/Snake_Simple">Snake</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @websites.each do |website| %>
+    <div class="col-md-4">
+      <div class="card">
+        <a href="<%=website.url%>" target="_blank"><img src="<%=website.img%>" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title"><%=website.title%></h5>
+          <p class="card-text">
+            <%=website.desc%>
+          </p>
+          <a href="<%=website.url%>" class="btn btn-primary"><%=website.title%></a>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
